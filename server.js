@@ -30,6 +30,6 @@ app.use((error, req, res, next) => {
 
 })
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`listenning on port ${process.env.PORT}`);
 })

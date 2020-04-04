@@ -19,10 +19,7 @@ function addPolygonToDB(new_polygon){
         "type": "FeatureCollection",
         "features": [...db.features, new_polygon]
     }
-    console.log(updated_db)
-    // console.log(GJV.isFeatureCollection(newGeoJSON))
-    // console.log(GJV.isFeatureCollection(dbObj))
-    // console.log(GJV.isFeatureCollection(GeoJSON2))
+    // console.log(updated_db)
 
     let dbContent = JSON.stringify(updated_db);
 
