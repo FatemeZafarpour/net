@@ -1,0 +1,23 @@
+{
+  "name": "hw1",
+  "version": "1.0.0",
+  "description": "first homework for the Internet Engineering",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "startDev": "nodemon server.js"
+  },
+  "author": "fateme zafarpour",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "geojson-validation": "^0.2.1",
+    "point-in-polygon": "^1.0.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
