@@ -3,8 +3,8 @@ const app = express()
 const gis = require('./routes/gis')
 const winston = require('winston')
 const dotenv = require('dotenv')
-const fs = require("fs");
-const path = require("path");
+const Logger = require('./logger_service')
+const logger = new Logger()
 
 dotenv.config()
 
@@ -31,5 +31,5 @@ app.use((error, req, res, next) => {
 })
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log(`listenning on port ${process.env.PORT}`);
+    logger.info(`app is running on port ${process.env.PORT}`);
 })
