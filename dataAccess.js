@@ -35,4 +35,10 @@ function addPolygonToDB(new_polygon){
     return updated_db;
 }
 
-module.exports = addPolygonToDB;
+
+function givePolygons(){
+    return db.features;
+}
+
+module.exports.addPolygonToDB = addPolygonToDB;
+module.exports.givePolygons = givePolygons;
