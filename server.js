@@ -11,6 +11,9 @@ dotenv.config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+app.get('/' , (req , res)=>{
+    res.send('firstPage');
+})
 app.use('/gis', gis)
 
 app.use((req, res, next) => {
