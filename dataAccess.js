@@ -1,5 +1,7 @@
 const fs = require("fs");
 const path = require("path");
+const Logger = require('./logger_service')
+const logger = new Logger()
 
 let db;
 fs.readFile(path.resolve(__dirname, "./db.json"), function (err, data) {
@@ -14,7 +16,7 @@ fs.readFile(path.resolve(__dirname, "./db.json"), function (err, data) {
 })
 
 function addPolygonToDB(new_polygon){
-
+    
     let updated_db = {
         "type": "FeatureCollection",
         "features": [...db.features, new_polygon]
@@ -25,11 +27,10 @@ function addPolygonToDB(new_polygon){
 
     fs.writeFileSync(path.resolve(__dirname, "./db.json"), dbContent, 'utf8', function (err) {
         if (err) {
-            console.log("An error occured while writing JSON Object to File.");
+            logger.error('An error occured while writing new polygon to db.')
             return console.log(err);
         }
-
-        console.log("JSON file has been saved.");
+        logger.info('new polygon has been saved.')
     });
     db = updated_db;
     return updated_db;

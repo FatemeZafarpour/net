@@ -32,12 +32,13 @@ router.get('/testpoint' , (req, res) =>{
 router.put('/addpolygon', function (req, res) {
     
     if (GJV.valid(req.body)) {
-        console.log('valid!')
+        logger.info(`valid put request. ${req.body}`)
         const result = service.addPolygon(req.body)
         res.status(200).json(result);
     }else{
+        logger.info('invalid polygon')
         res.status(400).json({
-            'message' : 'bad request'
+            'message' : 'bad request(invalid polygon)'
         });
     }
 

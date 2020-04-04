@@ -12,8 +12,8 @@ function findPoint(lat , long){
 
     for (index = 0; index < polygons.length; index++) { 
         let inside  = is_inside(polygons[index], long , lat);
+        let name = polygons[index]['properties']['name']
         if(inside === true) {
-            let name = polygons[index]['properties']['name']
             res.pol.push(name)
         } 
         logger.debug(`point is inside ${name}`, inside);
